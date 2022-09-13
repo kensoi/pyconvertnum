@@ -94,25 +94,26 @@ def convert_to_word(value, DEBUG = False):
         print("test return: ", response)
     return response
 
-def test():
+def test(DEBUG):
     """
     Для теста
     """
-    print(convert_to_word(7431))
-    print(convert_to_word(2149))
-    print(convert_to_word(15))
-    print(convert_to_word(3))
-    print(convert_to_word(100000))
-    print(convert_to_word(10000))
-    print(convert_to_word(1000))
-    print(convert_to_word(100))
-    print(convert_to_word(10))
-    print(convert_to_word(1))
-    print(convert_to_word(101010))
+    print(convert_to_word(7431, DEBUG))
+    print(convert_to_word(2149, DEBUG))
+    print(convert_to_word(15, DEBUG))
+    print(convert_to_word(3, DEBUG))
+    print(convert_to_word(100000, DEBUG))
+    print(convert_to_word(10000, DEBUG))
+    print(convert_to_word(1000, DEBUG))
+    print(convert_to_word(100, DEBUG))
+    print(convert_to_word(10, DEBUG))
+    print(convert_to_word(1, DEBUG))
+    print(convert_to_word(101010, DEBUG))
 
 if __name__ == "__main__":
+    DEBUG = "debug" in argv
     if "test" in argv:
-        test()
+        test(DEBUG)
         
     else:
         a = int(input("Введите число в пределах [1, 999999] и нажмите Enter: "))
@@ -120,4 +121,4 @@ if __name__ == "__main__":
         if a < 1 or a > 999999:
             raise ValueError("Число должно быть в пределах от 1 до 999999")
 
-        print(f"Число в словесной форме: {convert_to_word(a)}")
+        print(f"Число в словесной форме: {convert_to_word(a, DEBUG)}")
