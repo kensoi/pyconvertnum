@@ -121,4 +121,5 @@ if __name__ == "__main__":
         if a < 1 or a > 999999:
             raise ValueError("Число должно быть в пределах от 1 до 999999")
 
-        print(f"Число в словесной форме: {convert_to_word(a, DEBUG)}")
+        value = convert_to_word(a, DEBUG).capitalize()
+        print(f"Число в словесной форме: {value}")
